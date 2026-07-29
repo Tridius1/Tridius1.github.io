@@ -26,9 +26,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "tswanson98" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: 
 github_username:  Tridius1
+# Tab icon
+favicon: /assets/images/avatar.png
 
 # Build settings
-theme: minima
+theme: jekyll-dash
 plugins:
   - jekyll-feed
 
@@ -37,6 +39,19 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+
+# Author Settings
+author:
+  name: Tristan Swanson
+  bio: Hello! I'm a software developer with a background in computer science and structural engineering. Currently building open-source projects in Rust focused on hardware integration and Windows development.
+  avatar: /assets/images/avatar.png
+
+show_author: true
+
+social_links:
+    - url: https://github.com/Tridius1
+      icon: github-square
+      color: purple
 
 # Exclude from processing.
 # The following items will not be processed, by default.
