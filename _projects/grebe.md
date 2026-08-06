@@ -15,9 +15,15 @@ While open source software for using arduino hardware to interface with the Wind
 ### Process
 As the sole developer, I engineered Grebe from the ground up, dividing the project into two distinct domains: a lightweight background Windows daemon and the embedded microcontroller firmware.
 
-* **Hardware & Firmware:** I designed the physical interface using an ESP32 DEVKIT V1, EC11 rotary encoders, and a DIYables LCD. The firmware, written in C++, is responsible for debouncing the physical inputs, updating the local UI, and establishing a fast, reliable serial connection to the host PC.
+* **Hardware & Firmware:** I designed the physical interface using an ESP32 DEVKIT V1, EC11 rotary encoders, and a DIYables LCD. The firmware, written in C++:
+	* Debounces the physical inputs 
+	* Updates the local UI
+	* Establishes a fast, reliable serial connection to the host PC
 
-* **Systems Programming (Daemon):** I built the Windows daemon in Rust to ensure memory safety, speed, and portability. The daemon hooks into the Windows Core Audio API (WASAPI) to intercept and inject volume commands. It is responsible for listening to both user inputs, forwarded by the hardware, and Windows audio events to maintain the state of the mixer and inform the hardware so that state can be displayed. 
+* **Systems Programming (Daemon):** I built the Windows daemon in Rust to ensure memory safety, speed, and portability. The daemon:
+	* Hooks into the Windows Core Audio API (WASAPI) to intercept and inject volume commands
+	* Listens to user inputs, forwarded by the hardware
+	* Listens to and Windows audio events to maintain the state of the mixer and inform the hardware so that state can be displayed. 
 
 * **Resilience & UX:** A major focus of the process was bulletproofing the user experience. I implemented a named system Mutex to handle single-instance locking, preventing overlapping audio hooks if the user accidentally launched the app twice. Additionally, I engineered a robust reconnection loop that allows the Rust daemon to gracefully handle broken serial pipes and hotplugging of the hardware.
 
