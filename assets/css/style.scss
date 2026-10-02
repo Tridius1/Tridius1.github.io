@@ -1,0 +1,22 @@
+---
+---
+@import "dash";
+
+/* Paste your flexbox CSS fix right below this line */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body > main, 
+body > .page-content {
+  flex-grow: 1;
+}
+
+body > footer,
+.theme-switch {
+  flex-shrink: 0;
+}
