@@ -35,4 +35,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 
 # Dark Theme
+gem "jekyll-remote-theme"
 gem 'jekyll-dash', '~> 1'

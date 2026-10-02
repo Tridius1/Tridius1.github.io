@@ -30,9 +30,10 @@ github_username:  Tridius1
 favicon: /assets/images/avatar.png
 
 # Build settings
-theme: jekyll-dash
+remote_theme: bitbrain/jekyll-dash
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 
 collections:
