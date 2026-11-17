@@ -44,7 +44,7 @@ collections:
 # Author Settings
 author:
   name: Tristan Swanson
-  bio: Hello! I'm a software developer with a background in computer science and structural engineering. Currently building open-source projects in Rust focused on hardware integration and Windows development.
+  bio: Hello! I'm a software developer with a background in computer science and structural engineering. Currently building open-source projects in Rust and Python focused on hardware integration, Windows development and security.
   avatar: /assets/images/avatar.png
 
 show_author: true

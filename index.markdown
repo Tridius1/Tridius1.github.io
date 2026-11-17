@@ -26,7 +26,7 @@ layout: page
 
 </div>
 
-<div class="project-grid">
+<div class="project-grid" style="display: flex; flex-direction: column; gap: 25px;">
 	{% for project in site.projects %}
 		<div class="project-card">
 			<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
@@ -37,10 +37,10 @@ layout: page
 				{% endif %}
 				<h3 style="margin: 0;"><a href="{{ project.url }}">{{ project.title }}</a></h3>
 			</div>
-		<p>{{ project.subtitle }}</p>
-		{% if project.github_link %}
-			<a href="{{ project.github_link }}">View Code</a>
-		{% endif %}
+			<p>{{ project.subtitle }}</p>
+			{% if project.github_link %}
+				<a href="{{ project.github_link }}">View Code</a>
+			{% endif %}
 		</div>
 	{% endfor %}
 </div>
